@@ -75,10 +75,10 @@ class ClassifierModel:
         net = self.net
         if isinstance(net, torch.nn.DataParallel):
             net = net.module
-        print('loading the model from /content/drive/MyDrive/3DVSS_Graph/MeshCNN/latest_net.pth')
+        print('loading the model from /content/drive/MyDrive/3DVSS_MeshCNN/MeshCNN/latest_net.pth')
         # PyTorch newer than 0.4 (e.g., built from
         # GitHub source), you can remove str() on self.device
-        state_dict = torch.load("/content/drive/MyDrive/3DVSS_Graph/MeshCNN/latest_net.pth", map_location=str(self.device))
+        state_dict = torch.load("/content/drive/MyDrive/3DVSS_MeshCNN/MeshCNN/latest_net.pth", map_location=str(self.device))
         if hasattr(state_dict, '_metadata'):
             del state_dict._metadata
         net.load_state_dict(state_dict)
